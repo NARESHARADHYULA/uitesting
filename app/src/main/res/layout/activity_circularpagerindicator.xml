@@ -12,14 +12,15 @@
         android:layout_height="match_parent">
 
         </android.support.v4.view.ViewPager>
-    <Button
+    <ImageView
         android:layout_width="wrap_content"
+        android:src="@drawable/ic_arrow_forward_white_24dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="skip"
-        android:onClick="skip"
-        android:background="@color/colorPrimaryDark"
-        />
+        android:layout_alignBottom="@+id/indicator"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:layout_alignRight="@+id/indicator"
+        android:onClick="skip"/>
     <me.relex.circleindicator.CircleIndicator
         android:id="@+id/indicator"
         android:layout_alignParentBottom="true"

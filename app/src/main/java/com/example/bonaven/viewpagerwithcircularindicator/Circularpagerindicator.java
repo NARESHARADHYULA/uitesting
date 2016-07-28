@@ -9,12 +9,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.astuetz.PagerSlidingTabStrip;
-
 import me.relex.circleindicator.CircleIndicator;
 
 public class Circularpagerindicator extends AppCompatActivity {
-
+    public  ViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,11 +25,32 @@ public class Circularpagerindicator extends AppCompatActivity {
         CircleIndicator indicator = (CircleIndicator)findViewById(R.id.indicator);
         indicator.setViewPager(viewPager);
 
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                if (position==2){
+                    Intent intent= new Intent(getApplication(),pagertabswithicons.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
 
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
+
     public void skip(View view){
-        Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+        Intent intent= new Intent(getApplicationContext(),pagertabswithicons.class);
         startActivity(intent);
+        finish();
     }
     public  class myadapter extends FragmentPagerAdapter {
         public myadapter(FragmentManager fm) {
