@@ -1,5 +1,6 @@
 package com.example.bonaven.viewpagerwithcircularindicator;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -30,6 +31,11 @@ public class pagertabswithicons extends AppCompatActivity implements MaterialTab
             public void onPageSelected(int position) {
                 // when user do a swipe the selected tab change
                 tabHost.setSelectedNavigationItem(position);
+                if(position==2){
+                    Intent intent= new Intent(getApplicationContext(),slidingpageviewer.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
         // insert all tabs from pagerAdapter data

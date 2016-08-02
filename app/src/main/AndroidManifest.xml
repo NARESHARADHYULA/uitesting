@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Circularpagerindicator">
+        <activity android:name=".fabActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -16,7 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".pagertabswithicons"></activity>
+        <activity android:name=".pagertabswithicons" />
+        <activity android:name=".slidingpageviewer" />
+        <activity android:name=".Circularpagerindicator"></activity>
     </application>
 
 </manifest>
